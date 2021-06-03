@@ -237,20 +237,21 @@ int binary_search(int low, int high, int ip)
 
 static char *get_string()
 {
-    unsigned int buff;
+    unsigned int buff = 0;
     char *str = realloc(NULL, sizeof(char));
     char *tmp;
-    int c, i;
-    for (i = 0; (c = readvalue(1, &buff)) == 1; i++)
-    {
+    int i =0 ,c = 0;
 
-        if (buff == 0x0)
-        {
-            break;
-        }
+    if((c = readvalue(1, &buff)) != 1){
+        return NULL;
+    }
+
+    for (i = 0; buff !=0; i++)
+    {
         str[i] = buff;
         tmp = realloc(str, (sizeof(char)) * (i + 2));
         str = tmp;
+        readvalue(1, &buff);
     }
     str[i] = '\0';
     return str;

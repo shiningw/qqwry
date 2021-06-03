@@ -15,7 +15,7 @@ void qqwry_seek(int offset);
 void qqwry_forward(unsigned int byte);
 void qqwry_back(unsigned int byte);
 static char *get_string();
-int getDetail(char *ip);
+int get_location(char *ip);
 int gbk2utf8(char *utf8_str, char *gbk_str);
 
 typedef struct
