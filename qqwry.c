@@ -302,7 +302,7 @@ int convert_data(char *parent_data, char *child_data)
 int qqwry_redirect(int bytes)
 {
     int redirect_offset;
-    readvalue(3, &redirect_offset);
+    readvalue(bytes, &redirect_offset);
     qqwry_seek(redirect_offset);
     return redirect_offset;
 }
